@@ -16,13 +16,74 @@
   user-select: none;
 }
 
-body {
+body,
+.primary-nav::before {
+  background: hsla(0, 0%, 0%, 0.5);
   font-family: var(--ff-primary);
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.6;
 }
+.primary-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 
+.primary-nav a {
+  font-weight: 700;
+  margin-inline: 0.7em;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.nav-toggle {
+  display: none;
+  position: fixed !important;
+}
+.nav-toggle[aria-expanded="true"] {
+  position: fixed;
+  background: url(img/times.svg) center / cover no-repeat;
+}
+@media (max-width: 55em) {
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 60%;
+    gap: 3em;
+    padding: min(30vh, 10rem) 2em;
+    background: hsla(0, 0%, 100%, 0.1);
+    flex-direction: column;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms ease;
+  }
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .primary-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(10px);
+    z-index: -1;
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    background: url(img/menu.svg) center / cover no-repeat;
+    border: 0;
+    right: 2rem;
+    z-index: 9999;
+    cursor: pointer;
+  }
+}
 .profile,
 .profile-overlay::before {
   background: url(./img/img1.jpg) center / cover no-repeat fixed;
@@ -52,14 +113,27 @@ body {
   margin: 1rem auto;
   max-width: 100px;
 }
+.profile-prof {
+  display: flex;
+  flex-direction: row;
 
+  justify-content: space-evenly;
+}
+@media (max-width: 55em) {
+  .profile-prof {
+    flex-direction: column;
+  }
+}
 .skill-icon {
   margin: 1rem auto;
   width: 85px;
 }
-
 .logo {
   text-decoration: none;
+  display: inline-block;
+}
+.logo:hover {
+  border: none;
 }
 .header-icons-wrapper {
   display: flex;
@@ -80,18 +154,6 @@ body {
   transition: border 0.4s;
   border: solid 0.1px var(--clr-neutral-100);
 }
-.nav-links {
-  border-bottom: solid 0.1px #ffffff2c;
-  transition: border 0.4s;
-  text-decoration: none;
-  padding: 0.4em 0.8em 0.4em;
-  max-width: max-content;
-  margin-right: 1rem;
-  color: var(--clr-neutral-100);
-}
-.nav-links:hover {
-  border-bottom: solid 0.1px var(--clr-neutral-100);
-}
 
 body,
 h1,
@@ -100,15 +162,6 @@ h3,
 p {
   margin: 0;
 }
-
-.logo {
-  display: inline-block;
-}
-
-.logo:hover {
-  border: none;
-}
-
 h1 {
   color: var(--clr-primary-400);
   font-family: var(--ff-accent);
@@ -123,7 +176,6 @@ h1 {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
-
 h2,
 h3 {
   color: var(--clr-neutral-400);
@@ -131,7 +183,6 @@ h3 {
   font-weight: 900;
   line-height: 1;
 }
-
 h2,
 h3,
 p {
@@ -143,6 +194,7 @@ img {
 }
 .img-medium {
   height: 75%;
+  aspect-ratio: 2;
 }
 .img-large {
   cursor: pointer;
@@ -212,10 +264,6 @@ section {
 .social-icons:hover {
   transition: border 0.4s;
   border: solid 0.1px var(--clr-neutral-100);
-}
-
-.split-links {
-  justify-content: flex-end;
 }
 
 .split {
@@ -316,10 +364,9 @@ img.hover-shadow {
 }
 .close {
   color: var(--clr-neutral-100);
-  opacity: 0.7;
   position: absolute;
-  top: 1rem;
-  right: 3rem;
+  top: 1.2rem;
+  left: 3rem;
   font-size: 35px;
   font-weight: bold;
   transition: 0.6s ease;
@@ -363,9 +410,6 @@ a.next:hover {
 }
 
 @media (max-width: 50em) {
-  .img-medium {
-    height: 65%;
-  }
   .modal {
     padding: 1rem;
   }
@@ -413,17 +457,11 @@ a.next:hover {
     padding: 0.5rem;
     font-size: 1.2rem;
   }
-  .nav-links {
-    font-size: 1.125rem;
-  }
   h1:first-of-type {
     margin-bottom: 0.5em;
   }
   section:first-of-type {
     padding: 1em 0 1em 0;
-  }
-  .header-links {
-    margin-top: 1.5rem;
   }
   a {
     margin-top: 0.5em;
@@ -453,10 +491,6 @@ a.next:hover {
   }
 }
 
-.container--narrow {
-  max-width: 34rem;
-}
-
 .bg-light {
   background-color: var(--clr-primary-200);
 }
@@ -474,4 +508,14 @@ a.next:hover {
 .bg-primary h2,
 .bg-dark h2 {
   color: var(--clr-primary-200);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
