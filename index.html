@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="page.css" />
+  <link rel="icon" href="img/favicon.ico">
+  <script src="page.js"></script>
+</head>
+
+<body>
+  <section class="bg-dark">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="img/logo.svg" alt="Website logo.">
+      </a>
+      <div class="split split-links">
+        <a href="#profile" class="nav-links">Profile</a>
+        <a href="#skills" class="nav-links">Skills</a>
+        <a href="#projects" class="nav-links">Projects</a>
+        <a href="#contact" class="nav-links">Contact</a>
+      </div>
+      <div class="header-icons-wrapper">
+        <a href="https://www.linkedin.com/in/toberi/" class="logo" target="_blank">
+          <i class="fab fa-linkedin-in header-icons"></i>
+        </a>
+        <a href="https://github.com/ToberiTE" class="logo" target="_blank">
+          <i class="fab fa-github header-icons"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile" id="profile">
+    <div class="container profile-overlay" id="profile-overlay">
+      <img class="profile-pic" src="img/me.jpg" alt="Profile picture." />
+      <h2 class="text-center">Hello, I'm Tobias!</h2>
+      <p class="text-center">
+        Software / Web developer&emsp;IT generalist&emsp;Security enthusiast
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-dark">
+    <div class="container">
+      <h2 class="text-center">A handpick of my top skills</h2>
+      <div class="flex-icons-top">
+        <div>
+          <img src="img/csharpicon.svg" class="skill-icon"></img>
+        </div>
+        <div>
+          <img src="img/dotnet.svg" class="skill-icon inverted-color"></img>
+        </div>
+        <div>
+          <img src="img/htmlicon.svg" class="skill-icon"></img>
+        </div>
+        <div>
+          <img src="img/cssicon.svg" class="skill-icon"></img>
+        </div>
+      </div>
+      <div class="flex-icons-bottom">
+        <div>
+          <img src="img/sqlicon.svg" class="skill-icon inverted-color"></img>
+        </div>
+        <div>
+          <img src="img/jsicon.svg" class="skill-icon"></img>
+        </div>
+        <div>
+          <img src="img/reacticon.svg" class="skill-icon"></img>
+        </div>
+        <div>
+          <img src="img/googleIcon.svg" class="skill-icon"></img>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary" id="projects">
+    <div class="container">
+      <h2 class="text-center">Projects</h2>
+      <div class="split">
+        <div>
+          <img src="img/Notes1.png" onclick="openPreview1Lightbox();toSlideSpw1(1)" class="img-medium img-large"
+            alt="Project screenshot." />
+          <p>Notes App.</p>
+        </div>
+        <div>
+          <img src="img/Paint1.PNG" onclick="openPreview2Lightbox();toSlideSpw2(1)" class="img-medium img-large"
+            alt="Project screenshot." />
+          <p>Paint App.</p>
+        </div>
+        <div>
+          <img src="img/Showcase1.png" onclick="openPreview3Lightbox();toSlideSpw3(1)" class="img-medium img-large"
+            alt="Project screenshot." />
+          <p>Design work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="split">
+        <div>
+          <h2>Calendar.</h2>
+          <p>
+            Calendar with login/register functionality using Microsoft Identity & token secured API endpoints.
+          </p>
+        </div>
+        <div>
+          <img src="img/Calendar1.png" onclick="openProject1Lightbox();toSlideSpr1(1)" class="img-large"
+            alt="Project screenshot." />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary">
+    <div class="container">
+      <div class="split">
+        <div>
+          <img src="img/Driftservice1.JPG" onclick="openProject2Lightbox();toSlideSpr2(1)" class="img-large"
+            alt="Project screenshot." />
+        </div>
+        <div>
+          <h2 class="second">Operations Service.</h2>
+          <p>
+            Customer facing page for registering to receive updates on maintenance or downtime of several
+            provided services by "Company".
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark footer" id="contact">
+    <div class="container text-center footer-overlay">
+      <a href="#" class="logo">
+        <img src="img/logo.svg" alt="Website logo.">
+      </a>
+      <div class="footer-icons-wrapper">
+        <a href="https://www.linkedin.com/in/toberi/" class="logo" target="_blank">
+          <i class="fab fa-linkedin-in social-icons"></i>
+        </a>
+        <a href="https://github.com/ToberiTE" class="logo" target="_blank">
+          <i class="fab fa-github social-icons"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="Preview1Lightbox" class="modal">
+    <span class="close pointer" onclick="closePreview1Lightbox()">&times;</span>
+    <div class="modal-body">
+      <div class="slide spw1">
+        <img src="img/Notes1.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw1">
+        <img src="img/Notes2.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw1">
+        <img src="img/Notes3.png" class="image-slide" alt="Project screenshot." />
+      </div>
+
+      <a class="previous" onclick="changeSlideSpw1(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlideSpw1(1)">&#10095;</a>
+
+      <div class="previews">
+        <div class="col">
+          <img src="img/Notes1.png" class="modal-preview mpw1 hover-shadow" onclick="toSlideSpw1(1)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Notes2.png" class="modal-preview mpw1 hover-shadow" onclick="toSlideSpw1(2)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Notes3.png" class="modal-preview mpw1 hover-shadow" onclick="toSlideSpw1(3)"
+            alt="Project screenshot.">
+        </div>
+      </div>
+      <div class="modal-link-wrapper">
+        <a href="https://github.com/ToberiTE/NotesApp/tree/master" target="_blank" class="modal-link"><i
+            class="fab fa-github"></i>View project</a>
+        <a href="https://toberite.github.io/NotesApp/" target="_blank" class="modal-link"><i
+            class="fas fa-globe"></i>Visit website</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="Preview2Lightbox" class="modal">
+    <span class="close pointer" onclick="closePreview2Lightbox()">&times;</span>
+    <div class="modal-body">
+      <div class="slide spw2">
+        <img src="img/Paint1.PNG" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw2">
+        <img src="img/Paint2.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw2">
+        <img src="img/Paint3.PNG" class="image-slide" alt="Project screenshot." />
+      </div>
+
+      <a class="previous" onclick="changeSlideSpw2(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlideSpw2(1)">&#10095;</a>
+
+      <div class="previews">
+        <div class="col">
+          <img src="img/Paint1.PNG" class="modal-preview mpw2 hover-shadow" onclick="toSlideSpw2(1)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Paint2.png" class="modal-preview mpw2 hover-shadow" onclick="toSlideSpw2(2)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Paint3.PNG" class="modal-preview mpw2 hover-shadow" onclick="toSlideSpw2(3)"
+            alt="Project screenshot.">
+        </div>
+      </div>
+      <a href="https://github.com/ToberiTE/BasicPaintApp" target="_blank" class="modal-link"><i
+          class="fab fa-github"></i>View project</a>
+    </div>
+  </div>
+
+  <div id="Preview3Lightbox" class="modal">
+    <span class="close pointer" onclick="closePreview3Lightbox()">&times;</span>
+    <div class="modal-body">
+      <div class="slide spw3">
+        <img src="img/Showcase1.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw3">
+        <img src="img/Showcase2.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spw3">
+        <img src="img/Showcase3.png" class="image-slide" alt="Project screenshot." />
+      </div>
+
+      <a class="previous" onclick="changeSlideSpw3(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlideSpw3(1)">&#10095;</a>
+
+      <div class="previews">
+        <div class="col">
+          <img src="img/Showcase1.png" class="modal-preview mpw3 hover-shadow" onclick="toSlideSpw3(1)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Showcase2.png" class="modal-preview mpw3 hover-shadow" onclick="toSlideSpw3(2)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Showcase3.png" class="modal-preview mpw3 hover-shadow" onclick="toSlideSpw3(3)"
+            alt="Project screenshot.">
+        </div>
+      </div>
+      <div class="modal-link-wrapper">
+        <a href="https://github.com/ToberiTE/Showcase/" target="_blank" class="modal-link"><i
+            class="fab fa-github"></i>View project</a>
+        <a href="https://toberite.github.io/Showcase/" target="_blank" class="modal-link"><i
+            class="fas fa-globe"></i>Visit website</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="Project1Lightbox" class="modal">
+    <span class="close pointer" onclick="closeProject1Lightbox()">&times;</span>
+    <div class="modal-body">
+      <div class="slide spr1">
+        <img src="img/Calendar1.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spr1">
+        <img src="img/Calendar2.png" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spr1">
+        <img src="img/Calendar3.png" class="image-slide" alt="Project screenshot." />
+      </div>
+
+      <a class="previous" onclick="changeSlideSpr1(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlideSpr1(1)">&#10095;</a>
+
+      <div class="previews">
+        <div class="col">
+          <img src="img/Calendar1.png" class="modal-preview mpr1 hover-shadow" onclick="toSlideSpr1(1)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Calendar2.png" class="modal-preview mpr1 hover-shadow" onclick="toSlideSpr1(2)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Calendar3.png" class="modal-preview mpr1 hover-shadow" onclick="toSlideSpr1(3)"
+            alt="Project screenshot.">
+        </div>
+      </div>
+      <a href="https://github.com/ToberiTE/Calendar" target="_blank" class="modal-link"><i
+          class="fab fa-github"></i>View project</a>
+    </div>
+  </div>
+
+  <div id="Project2Lightbox" class="modal">
+    <span class="close pointer" onclick="closeProject2Lightbox()">&times;</span>
+    <div class="modal-body">
+      <div class="slide spr2">
+        <img src="img/Driftservice1.JPG" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spr2">
+        <img src="img/Driftservice2.JPG" class="image-slide" alt="Project screenshot." />
+      </div>
+      <div class="slide spr2">
+        <img src="img/Driftservice3.JPG" class="image-slide" alt="Project screenshot." />
+      </div>
+
+      <a class="previous" onclick="changeSlideSpr2(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlideSpr2(1)">&#10095;</a>
+
+      <div class="previews">
+        <div class="col">
+          <img src="img/Driftservice1.JPG" class="modal-preview mpr2 hover-shadow" onclick="toSlideSpr2(1)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Driftservice2.JPG" class="modal-preview mpr2 hover-shadow" onclick="toSlideSpr2(2)"
+            alt="Project screenshot.">
+        </div>
+        <div class="col">
+          <img src="img/Driftservice3.JPG" class="modal-preview mpr2 hover-shadow" onclick="toSlideSpr2(3)"
+            alt="Project screenshot.">
+        </div>
+      </div>
+      <a href="https://github.com/ToberiTE/Driftservice-Registration" target="_blank" class="modal-link"><i
+          class="fab fa-github"></i>View project</a>
+    </div>
+  </div>
+</body>
+
+</html>
