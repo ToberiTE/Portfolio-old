@@ -16,9 +16,7 @@
   user-select: none;
 }
 
-body,
-.primary-nav::before {
-  background: hsla(0, 0%, 0%, 0.5);
+body {
   font-family: var(--ff-primary);
   font-weight: 400;
   font-size: 1.3125rem;
@@ -30,7 +28,6 @@ body,
   margin: 0;
   overflow: hidden;
 }
-
 .primary-nav a {
   font-weight: 700;
   margin-inline: 0.7em;
@@ -45,50 +42,13 @@ body,
   position: fixed;
   background: url(img/times.svg) center / cover no-repeat;
 }
-@media (max-width: 55em) {
-  .primary-nav {
-    position: fixed;
-    inset: 0 0 0 60%;
-    gap: 3em;
-    padding: min(30vh, 10rem) 2em;
-    background: hsla(0, 0%, 100%, 0.1);
-    flex-direction: column;
-    z-index: 100;
-    transform: translateX(100%);
-    transition: transform 250ms ease;
-  }
-  .primary-nav[data-visible="true"] {
-    transform: translateX(0%);
-  }
 
-  .primary-nav::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    filter: blur(10px);
-    z-index: -1;
-  }
-  .nav-toggle {
-    display: block;
-    position: absolute;
-    width: 2rem;
-    aspect-ratio: 1;
-    top: 2rem;
-    background: url(img/menu.svg) center / cover no-repeat;
-    border: 0;
-    right: 2rem;
-    z-index: 9999;
-    cursor: pointer;
-  }
-}
 .profile,
 .profile-overlay::before {
-  background: url(./img/img1.jpg) center / cover no-repeat fixed;
+  background: url(./img/img1.jpg) center / cover no-repeat;
 }
 .profile-overlay {
+  z-index: 0;
   position: relative;
   color: var(--clr-neutral-100);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -116,14 +76,9 @@ body,
 .profile-prof {
   display: flex;
   flex-direction: row;
-
   justify-content: space-evenly;
 }
-@media (max-width: 55em) {
-  .profile-prof {
-    flex-direction: column;
-  }
-}
+
 .skill-icon {
   margin: 1rem auto;
   width: 85px;
@@ -136,8 +91,8 @@ body,
   border: none;
 }
 .header-icons-wrapper {
+  margin-top: 1rem;
   display: flex;
-  justify-content: space-evenly;
   width: min(100%, 12rem);
 }
 .header-icons {
@@ -149,6 +104,9 @@ body,
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.header-icons:first-of-type {
+  margin-right: 1.5rem;
 }
 .header-icons:hover {
   transition: border 0.4s;
@@ -308,30 +266,24 @@ section {
   width: 100%;
   max-width: 1200px;
 }
-
 .slide {
   display: none;
 }
-
 .image-slide {
   width: 100%;
 }
-
 .modal-preview {
   width: 100%;
 }
-
 .previews {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 img.modal-preview {
   cursor: pointer;
   opacity: 0.6;
 }
-
 img.active,
 .modal-preview:hover {
   opacity: 1;
@@ -339,7 +291,6 @@ img.active,
 img.hover-shadow {
   transition: 0.3s;
 }
-
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -371,14 +322,12 @@ img.hover-shadow {
   z-index: 1000;
   cursor: pointer;
 }
-
 .close:hover,
 .close:focus {
   opacity: 1;
   text-decoration: none;
   cursor: pointer;
 }
-
 a.previous,
 a.next {
   cursor: pointer;
@@ -395,19 +344,47 @@ a.next {
   user-select: none;
   -webkit-user-select: none;
 }
-
 a.next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-
 a.previous:hover,
 a.next:hover {
   color: #000;
   background-color: rgba(255, 255, 255, 0.8);
 }
-
-@media (max-width: 50em) {
+@media (max-width: 55em) {
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 60%;
+    gap: 3em;
+    padding: min(30vh, 10rem) 2em;
+    background: hsla(0, 0%, 15%, 0.8);
+    flex-direction: column;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 250ms ease;
+    overflow: auto;
+  }
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    background: url(img/menu.svg) center / cover no-repeat;
+    border: 0;
+    right: 2rem;
+    z-index: 9999;
+    cursor: pointer;
+  }
+  .profile-prof {
+    display: flex;
+    flex-direction: column;
+  }
   .modal {
     padding: 1rem;
   }
@@ -488,7 +465,10 @@ a.next:hover {
     margin-left: 2em;
   }
 }
-
+.flex {
+  display: flex;
+  gap: var(--gap, 2rem);
+}
 .bg-light {
   background-color: var(--clr-primary-200);
 }
