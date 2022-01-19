@@ -95,11 +95,11 @@ body {
   border: none;
 }
 .header-icons-wrapper {
-  margin-top: 2rem;
   display: flex;
   width: min(100%, 12rem);
 }
 .header-icons {
+  margin-top: 1.5rem;
   color: var(--clr-primary-400);
   font-size: 1.5rem;
   border: solid 0.1px #ffffff2c;
