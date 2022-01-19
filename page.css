@@ -60,7 +60,6 @@ body {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
 }
 .profile-overlay::before {
   content: "";
@@ -249,9 +248,9 @@ section {
 }
 
 .modal {
+  z-index: 10;
   display: none;
   position: fixed;
-  padding: 2rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -265,16 +264,15 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
   margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
 }
 .slide {
   display: none;
 }
 .image-slide {
-  width: 100%;
+  width: 80%;
+  aspect-ratio: auto;
+  margin: 0 auto;
 }
 .modal-preview {
   width: 100%;
@@ -319,7 +317,7 @@ img.hover-shadow {
 }
 .close {
   color: var(--clr-neutral-100);
-  position: absolute;
+  position: fixed;
   top: 1.2rem;
   left: 3rem;
   font-size: 2.625rem;
@@ -360,7 +358,7 @@ a.next:hover {
 @media (max-width: 55em) {
   .primary-nav {
     position: fixed;
-    inset: 0 0 0 60%;
+    inset: 0 0 0 50%;
     gap: 3em;
     padding: min(30vh, 10rem) 2em;
     background: hsla(0, 0%, 15%, 0.8);
