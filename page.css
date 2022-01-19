@@ -36,9 +36,8 @@ body {
   text-decoration: none;
 }
 .primary-nav a:hover {
-  border-spacing: 0.5rem;
   border-bottom: 1px solid #fff;
-  transition: 300ms ease-out;
+  transition: border 300ms ease-in;
 }
 .nav-toggle {
   display: none;
@@ -97,7 +96,7 @@ body {
   border: none;
 }
 .header-icons-wrapper {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   width: min(100%, 12rem);
 }
