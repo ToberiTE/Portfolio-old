@@ -23,16 +23,22 @@ body {
   line-height: 1.6;
 }
 .primary-nav {
+  justify-content: flex-end;
   list-style: none;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 .primary-nav a {
+  border-bottom: 1px solid transparent;
   font-weight: 700;
   margin-inline: 0.7em;
   color: hsl(0, 0%, 100%);
   text-decoration: none;
+}
+.primary-nav a:hover {
+  border-spacing: 0.5rem;
+  border-bottom: 1px solid #fff;
+  transition: 300ms ease-out;
 }
 .nav-toggle {
   display: none;
@@ -91,7 +97,7 @@ body {
   border: none;
 }
 .header-icons-wrapper {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   width: min(100%, 12rem);
 }
@@ -149,11 +155,10 @@ p {
 img {
   display: block;
   max-width: 100%;
+  overflow: hidden;
+  aspect-ratio: auto;
 }
-.img-medium {
-  height: 75%;
-  aspect-ratio: 2;
-}
+
 .img-large {
   cursor: pointer;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -365,6 +370,7 @@ a.next:hover {
     transform: translateX(100%);
     transition: transform 250ms ease;
     overflow: auto;
+    justify-content: center;
   }
   .primary-nav[data-visible="true"] {
     transform: translateX(0%);
