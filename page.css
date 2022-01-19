@@ -88,6 +88,7 @@ body {
   width: 85px;
 }
 .logo {
+  margin-bottom: 1rem;
   overflow: hidden;
   text-decoration: none;
   display: inline-block;
@@ -96,12 +97,10 @@ body {
   border: none;
 }
 .header-icons-wrapper {
-  padding: 0.5rem;
   display: flex;
   width: min(100%, 12rem);
 }
 .header-icons {
-  margin-top: 2rem;
   color: var(--clr-primary-400);
   font-size: 1.5rem;
   border: solid 0.1px #ffffff2c;
