@@ -96,11 +96,12 @@ body {
   border: none;
 }
 .header-icons-wrapper {
+  padding: 0.5rem;
   display: flex;
   width: min(100%, 12rem);
 }
 .header-icons {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   color: var(--clr-primary-400);
   font-size: 1.5rem;
   border: solid 0.1px #ffffff2c;
@@ -360,10 +361,10 @@ a.next:hover {
 @media (max-width: 55em) {
   .primary-nav {
     position: fixed;
-    inset: 0 0 0 45%;
+    inset: 0 0 0 40%;
     gap: 3em;
     padding: min(30vh, 10rem) 2em;
-    background: hsla(0, 0%, 15%, 0.8);
+    background: hsla(0, 0%, 15%, 0.95);
     flex-direction: column;
     z-index: 1000;
     transform: translateX(100%);
