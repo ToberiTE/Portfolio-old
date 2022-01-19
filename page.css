@@ -94,7 +94,7 @@ body {
   border: none;
 }
 .header-icons-wrapper {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   display: flex;
   width: min(100%, 12rem);
 }
@@ -191,7 +191,7 @@ section {
   width: min(90%, 70.5rem);
 }
 .container:first-of-type {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .footer {
   background: url(./img/img2.jpg) center / cover no-repeat;
@@ -323,7 +323,7 @@ img.hover-shadow {
 .close {
   color: var(--clr-neutral-100);
   position: fixed;
-  top: 1.2rem;
+  top: 2.8rem;
   left: 3rem;
   font-size: 2.625rem;
   z-index: 1000;
@@ -382,7 +382,7 @@ a.next:hover {
     position: absolute;
     width: 2rem;
     aspect-ratio: 1;
-    top: 2rem;
+    top: 3.8rem;
     background: url(img/menu.svg) center / cover no-repeat;
     border: 0;
     right: 2rem;
