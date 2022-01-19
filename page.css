@@ -358,7 +358,7 @@ a.next:hover {
 @media (max-width: 55em) {
   .primary-nav {
     position: fixed;
-    inset: 0 0 0 50%;
+    inset: 0 0 0 45%;
     gap: 3em;
     padding: min(30vh, 10rem) 2em;
     background: hsla(0, 0%, 15%, 0.8);
