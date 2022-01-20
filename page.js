@@ -239,8 +239,10 @@ function showSlideSpr2(n) {
   modalPreviews[slideIndex - 1].className += " active";
 }
 
-const navLinks = document.querySelector("ul");
-const modal = document.querySelector(".modal");
-navLinks.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+function closeModal() {
+  closePreview1Lightbox();
+  closePreview2Lightbox();
+  closePreview3Lightbox();
+  closeProject1Lightbox();
+  closeProject2Lightbox();
+}
