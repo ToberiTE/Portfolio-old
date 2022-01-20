@@ -238,3 +238,9 @@ function showSlideSpr2(n) {
   slides[slideIndex - 1].style.display = "block";
   modalPreviews[slideIndex - 1].className += " active";
 }
+
+const navLinks = document.querySelector("ul");
+const modal = document.querySelector(".modal");
+navLinks.addEventListener("click", () => {
+  modal.style.display = "none";
+});
