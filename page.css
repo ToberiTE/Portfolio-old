@@ -311,7 +311,7 @@ img.hover-shadow {
   padding-right: 1rem;
 }
 .close {
-  background-color: hsla(0,0%,0%,.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
   color: var(--clr-neutral-100);
   position: fixed;
   top: 2.8rem;
@@ -335,7 +335,7 @@ a.next {
   padding: 10px;
   margin-top: -50px;
   color: var(--clr-neutral-100);
-  background-color: hsl(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
