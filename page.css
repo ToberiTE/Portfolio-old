@@ -267,7 +267,6 @@ section {
 }
 .image-slide {
   width: 50vw;
-  aspect-ratio: 1;
   margin: 0 auto;
 }
 
@@ -275,7 +274,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 75%;
+  width: 30vw;
 }
 img.modal-preview {
   cursor: pointer;
@@ -284,8 +283,7 @@ img.modal-preview {
 img.active,
 .modal-preview:hover {
   opacity: 1;
-  max-width: 33%;
-  aspect-ratio: 1;
+  width: 30vw;
 }
 img.hover-shadow {
   transition: 0.3s;
