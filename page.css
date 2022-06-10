@@ -256,16 +256,17 @@ section {
 .modal-body {
   position: relative;
   display: flex;
-  height: fit-content;
+  height: max-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 .slide {
   display: none;
 }
 .image-slide {
-  width: 80%;
+  width: 100%;
   aspect-ratio: auto;
   margin: 0 auto;
 }
@@ -282,7 +283,7 @@ img.modal-preview {
 img.active,
 .modal-preview:hover {
   opacity: 1;
-  width: 80%;
+  width: 100%;
   aspect-ratio: 1;
 }
 img.hover-shadow {
