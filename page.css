@@ -260,13 +260,14 @@ section {
   height: 100vh;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 .slide {
   display: none;
 }
 .image-slide {
-  width: 70vw;
+  width: 50vw;
   aspect-ratio: 1;
   margin: 0 auto;
 }
@@ -284,8 +285,7 @@ img.modal-preview {
 img.active,
 .modal-preview:hover {
   opacity: 1;
-  width: 100%;
-  aspect-ratio: 1;
+  max-width: 33%;
 }
 img.hover-shadow {
   transition: 0.3s;
