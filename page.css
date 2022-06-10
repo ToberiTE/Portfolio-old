@@ -245,8 +245,6 @@ section {
 .modal {
   z-index: 10;
   display: none;
-  display: grid;
-  place-items: center;
   top: 0;
   left: 0;
   width: 80vw;
