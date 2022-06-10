@@ -266,7 +266,7 @@ section {
   display: none;
 }
 .image-slide {
-  width: 80vw;
+  width: 70vw;
   aspect-ratio: 1;
   margin: 0 auto;
 }
@@ -275,6 +275,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-width: 70vw;
 }
 img.modal-preview {
   cursor: pointer;
