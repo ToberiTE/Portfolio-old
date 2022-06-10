@@ -266,8 +266,8 @@ section {
   display: none;
 }
 .image-slide {
-  width: 100vw;
-  aspect-ratio: auto;
+  width: 80vw;
+  max-height: 30vh;
   margin: 0 auto;
 }
 
